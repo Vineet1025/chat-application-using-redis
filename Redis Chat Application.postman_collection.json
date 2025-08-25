@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "b0b44a69-16b7-46fb-89d8-56362a40b804",
+		"name": "Redis Chat Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36255366"
+	},
+	"item": [
+		{
+			"name": "create room",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"roomName\": \"openforall\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/chatapp/chatrooms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"chatapp",
+						"chatrooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all rooms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/chatapp/chatrooms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"chatapp",
+						"chatrooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "join room",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"participant\": \"guest_user\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/chatapp/chatrooms/general/join",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"chatapp",
+						"chatrooms",
+						"general",
+						"join"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send msg",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"participant\": \"guest_user\", \"message\": \"Hello everyone!\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/chatapp/chatrooms/openforall/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"chatapp",
+						"chatrooms",
+						"openforall",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "last N msg",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
